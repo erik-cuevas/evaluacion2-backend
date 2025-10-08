@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Listado
+{% endblock %}
+
+{% block contenido %}
+
+<h2>Listado de Productos</h2>
+
+{% if productos %}
+<table class="table">
+  <thead>
+    <tr>
+      <th>Imagen</th>
+      <th>Nombre</th>
+      <th>Descripcion</th>
+      <th>Precio</th>
+      <th>Acciones.</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for p in productos %}
+    <tr>
+      <td>
+        {% if p.imagen %}
+        <img src="{{ p.imagen.url }}" alt="{{ p.nombre }}" style="height:64px; width:auto; cursor:pointer;" data-bs-toggle="modal" data-bs-target="#imgModal{{ p.pk }}">
+
+        <!-- Modal -->
+        <div class="modal fade" id="imgModal{{ p.pk }}" tabindex="-1" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">{{ p.nombre }}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center">
+                <img src="{{ p.imagen.url }}" alt="{{ p.nombre }}" class="img-fluid">
+              </div>
+            </div>
+          </div>
+        </div>
+        {% else %}
+        <span class="text-muted">No image</span>
+        {% endif %}
+      </td>
+      <td>{{ p.nombre }}</td>
+      <td>{{ p.descripcion|truncatechars:60 }}</td>
+      <td>{{ p.precio }}</td>
+      <td>
+        <a class="btn btn-sm btn-danger" href="{% url 'eliminar' p.pk %}">Eliminar</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>No hay productos registrados.</p>
+{% endif %}
+
+{% endblock %}

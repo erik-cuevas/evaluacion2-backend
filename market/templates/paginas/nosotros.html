@@ -1,0 +1,110 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+</head>
+<body>
+    <h2>PAGINA NOSOTROS</h2>
+</body>
+</html> -->
+
+{% extends 'base.html' %}
+
+{% block titulo %} Nosotros {% endblock %}
+
+{% block contenido %}
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>Sobre la aplicación</h2>
+    <p class="lead">MercadoPlus es una solución ligera de gestión de productos diseñada para pequeñas y medianas empresas que necesitan controlar inventario y precios de forma rápida.</p>
+
+    <h4>Misión</h4>
+    <p>Nuestra misión es empoderar a comerciantes y administradores para que gestionen su catálogo y precios de manera eficiente, minimizando la complejidad técnica y permitiendo decisiones rápidas basadas en datos claros.</p>
+
+    <h4>Servicios</h4>
+    <p>Ofrecemos un panel para crear productos, editar información básica y eliminar registros obsoletos. El sistema está pensado como base para integrar funcionalidades futuras como control de stock detallado, categorí­a de productos y exportación de inventarios.</p>
+
+    <h4>Soporte</h4>
+    <p>Si necesitas asistencia, escribe a <a href="mailto:soporte@mercadoplus.cl">soporte@mercadoplus.cl</a> o visita el panel de administración si tienes credenciales de acceso.</p>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body text-center">
+                <h5 class="card-title">Imagen representativa</h5>
+                <p class="card-text">Seleccione una imagen para previsualizar (esto no sube la imagen al servidor).</p>
+
+                <div class="mb-3">
+                    <input class="form-control" type="file" id="imgInput" accept="image/*">
+                </div>
+                <div>
+                    <img id="imgPreview" src="" alt="Preview" class="img-fluid rounded" style="max-height:240px; display:none;"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Preview de imagen en cliente
+    const input = document.getElementById('imgInput');
+    const preview = document.getElementById('imgPreview');
+    if (input) {
+        input.addEventListener('change', (e) => {
+            const file = e.target.files && e.target.files[0];
+            if (!file) {
+                preview.style.display = 'none';
+                preview.src = '';
+                return;
+            }
+            const url = URL.createObjectURL(file);
+            preview.src = url;
+            preview.style.display = 'block';
+        });
+    }
+</script>
+
+<hr class="my-4">
+
+<div class="row">
+    <div class="col-md-6">
+        <h4>Ubicación</h4>
+        <p>Encuéntranos en: INACAP Puente Alto (dirección aproximada).</p>
+        <div class="ratio ratio-16x9">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26591.60032077349!2d-70.60520960000001!3d-33.5806464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662d718a032972d%3A0x45da5699698e2261!2sINACAP%20Puente%20Alto!5e0!3m2!1ses-419!2scl!4v1759709183677!5m2!1ses-419!2scl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p class="mt-2"><strong>Teléfono:</strong> +56 9 4435 6227</p>
+    </div>
+
+    <div class="col-md-6">
+        <h4>Horario de atención</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Día</th>
+                    <th>Horario</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Lunes a Viernes</td>
+                    <td>09:00 - 18:00</td>
+                </tr>
+                <tr>
+                    <td>Sábado</td>
+                    <td>Cerrado</td>
+                </tr>
+                <tr>
+                    <td>Domingo</td>
+                    <td>Cerrado</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
+
