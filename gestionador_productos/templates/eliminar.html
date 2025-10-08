@@ -1,0 +1,17 @@
+<!--
+Plantilla de confirmación para eliminar un Producto.
+Recibe en contexto: producto (instancia de Producto).
+-->
+
+{% extends 'base.html' %} {% block titulo %} Eliminar Producto {% endblock %} {%
+block contenido %}
+
+<h2>Eliminar Producto</h2>
+<p>¿Está seguro que desea eliminar "{{ producto.nombre }}"?</p>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-danger">Sí, eliminar</button>
+  <a class="btn btn-secondary" href="{% url 'listado' %}">Cancelar</a>
+</form>
+
+{% endblock %}

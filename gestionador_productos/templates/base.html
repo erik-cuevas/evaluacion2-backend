@@ -1,3 +1,8 @@
+<!--
+Plantilla base (base.html)
+Proporciona el layout principal, el navbar y el footer.
+Las plantillas específicas extienden esta plantilla y rellenan los bloques.
+-->
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +22,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <!-- App styles (use gestionador_productos static copy) -->
+    <!-- App styles -->
     <link
       rel="stylesheet"
       href="{% static 'gestionador_productos/styles.css' %}"
@@ -59,8 +64,11 @@
     </nav>
 
     <main class="container my-4">
-      <div class="row">
-        <div class="col-12">{% block contenido %} {% endblock %}</div>
+        <div class="row">
+        <div class="col-12">
+            {% block contenido %}
+            {% endblock %}
+        </div>
       </div>
     </main>
 

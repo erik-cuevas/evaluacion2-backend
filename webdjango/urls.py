@@ -22,7 +22,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include ('market.urls'))
+    # Application routes — using the consolidated app
+    path('', include('gestionador_productos.urls')),
 ]
 
 if settings.DEBUG:

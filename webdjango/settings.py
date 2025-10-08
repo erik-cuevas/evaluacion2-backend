@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'market',
+    # 'market' removed after migrating its data to 'gestionador_productos'.
+    # If you need to revert, add 'market' back to this list.
+    'gestionador_productos',
 ]
 
 MIDDLEWARE = [

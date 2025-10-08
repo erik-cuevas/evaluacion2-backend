@@ -1,21 +1,9 @@
-from django.test import TestCase
-from django.urls import reverse
-from .models import Producto
+"""Shim de tests para compatibilidad: reexporta los tests desde la nueva app.
 
+Esto evita fallos en entornos donde la suite intenta importar tests desde
+`market.tests`.
+"""
 
-class ProductoModelTest(TestCase):
-	def test_crear_producto(self):
-		p = Producto.objects.create(nombre="Test", descripcion="desc", precio=9.99)
-		self.assertEqual(str(p).startswith("Test"), True)
-
-
-class ProductoListViewTest(TestCase):
-	def setUp(self):
-		Producto.objects.create(nombre="P1", descripcion="d1", precio=1.0)
-		Producto.objects.create(nombre="P2", descripcion="d2", precio=2.0)
-
-	def test_listado_status_code(self):
-		url = reverse('listado')
-		resp = self.client.get(url)
-		self.assertEqual(resp.status_code, 200)
-		self.assertContains(resp, "Listado de Productos")
+# Importar todo desde gestionador_productos.tests para que unittest descubra
+# las mismas clases de test que antes.
+from gestionador_productos.tests import *  # noqa: F401,F811
