@@ -1,19 +1,44 @@
-<!--
-Plantilla para crear un nuevo Producto.
+{% extends 'base.html' %}
+
+{# Título de la página #}
+{% block titulo %}
+Crear Producto
+{% endblock %}
+
+{% block contenido %}
+
+<!-- Plantilla para crear un nuevo Producto.
 
 Notas:
 - `enctype="multipart/form-data"` es necesario para subir archivos (imagen).
 - `{% csrf_token %}` protege el formulario contra CSRF.
 -->
 
-{% extends 'base.html' %} {# Título de la página #} {% block titulo %} Crear
-Producto {% endblock %} {% block contenido %}
-
 <h2>Crear Producto</h2>
+
+{# Mostrar errores globales del formulario si existen #}
+{% if form.non_field_errors %}
+  <div class="alert alert-danger">{{ form.non_field_errors }}</div>
+{% endif %}
 
 {# Formulario para crear un producto. enctype necesario para subir archivos. #}
 <form method="post" enctype="multipart/form-data" novalidate>
-  {% csrf_token %} {{ form.as_p }}
+  {% csrf_token %}
+  {# Mostrar errores por campo encima del formulario para debugging #}
+  {% if form.errors %}
+    <div class="alert alert-danger">
+      <ul class="mb-0">
+        {% for field, errors in form.errors.items %}
+          {% for err in errors %}
+            <li><strong>{{ field }}:</strong> {{ err }}</li>
+          {% endfor %}
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+
+  {{ form.as_p }}
+
   <button type="submit" class="btn btn-primary">Crear</button>
   <a class="btn btn-secondary" href="{% url 'listado' %}">Cancelar</a>
 </form>

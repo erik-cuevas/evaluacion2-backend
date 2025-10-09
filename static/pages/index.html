@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MercadoPlus - Inicio (estático)</title>
+    <link rel="stylesheet" href="/static/gestionador_productos/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/static/pages/index.html">MercadoPlus</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/static/pages/index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="/static/pages/listado.html">Listado</a></li>
+            <li class="nav-item"><a class="nav-link" href="/static/pages/crear.html">Crear</a></li>
+            <li class="nav-item"><a class="nav-link" href="/static/pages/nosotros.html">Nosotros</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container my-4">
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <h1>MercadoPlus</h1>
+        <p class="lead">Panel de gestión de productos - versión estática para presentación.</p>
+      </div>
+
+      <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/static/gestionador_productos/slide1-1280.png" class="d-block w-100" alt="Slide 1" style="height:400px; object-fit:cover;">
+            <div class="carousel-caption d-none d-md-block"><h5>Gestión rápida</h5><p>Crea productos con nombre, descripción y precio en segundos.</p></div>
+          </div>
+          <div class="carousel-item">
+            <img src="/static/gestionador_productos/slide2-1280.png" class="d-block w-100" alt="Slide 2" style="height:400px; object-fit:cover;">
+            <div class="carousel-caption d-none d-md-block"><h5>Interfaz segura</h5><p>Protección CSRF en formularios y validaciones.</p></div>
+          </div>
+          <div class="carousel-item">
+            <img src="/static/gestionador_productos/slide3-1280.png" class="d-block w-100" alt="Slide 3" style="height:400px; object-fit:cover;">
+            <div class="carousel-caption d-none d-md-block"><h5>Responsive</h5><p>Accesible desde móviles y escritorio.</p></div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Anterior</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Siguiente</span></button>
+      </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

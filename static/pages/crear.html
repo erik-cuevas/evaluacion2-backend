@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MercadoPlus - Crear (estático)</title>
+    <link rel="stylesheet" href="/static/gestionador_productos/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/static/pages/index.html">MercadoPlus</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/static/pages/index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="/static/pages/listado.html">Listado</a></li>
+            <li class="nav-item"><a class="nav-link" href="/static/pages/crear.html">Crear</a></li>
+            <li class="nav-item"><a class="nav-link" href="/static/pages/nosotros.html">Nosotros</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container my-4">
+      <h2>Crear Producto (estático)</h2>
+
+      <form>
+        <div class="mb-3">
+          <label class="form-label">Nombre</label>
+          <input class="form-control" type="text" placeholder="Nombre del producto">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Descripción</label>
+          <textarea class="form-control" rows="3" placeholder="Descripción"></textarea>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Precio</label>
+          <input class="form-control" type="number" step="0.01" placeholder="Precio">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Imagen</label>
+          <input class="form-control" type="file" disabled>
+        </div>
+        <button class="btn btn-primary" type="button">Crear (estático)</button>
+      </form>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
