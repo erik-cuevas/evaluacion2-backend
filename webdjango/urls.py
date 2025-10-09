@@ -27,4 +27,7 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
+    # En DEBUG se sirven los archivos de MEDIA desde MEDIA_ROOT para facilitar
+    # el desarrollo. En producción se debe servir desde un servidor estático
+    # o un CDN/S3.
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

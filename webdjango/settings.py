@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'market' removed after migrating its data to 'gestionador_productos'.
-    # If you need to revert, add 'market' back to this list.
+    # 'market' fue removida tras consolidar los datos en 'gestionador_productos'.
+    # Si necesitas revertir el cambio añade 'market' de nuevo.
     'gestionador_productos',
 ]
 
@@ -122,6 +122,11 @@ STATIC_URL = 'static/'
 # Media files (uploaded by users)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Notas:
+# - STATIC_URL: ruta base para servir archivos estáticos durante desarrollo.
+# - MEDIA_URL y MEDIA_ROOT: configuraciones para archivos subidos por usuarios
+#   (imagenes de productos). En producción, sirve MEDIA desde un bucket o CDN.
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

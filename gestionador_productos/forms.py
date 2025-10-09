@@ -22,3 +22,8 @@ class ProductoForm(forms.ModelForm):
             "precio": forms.NumberInput(attrs={"class": "form-control", "step": "0.01"}),
             "imagen": forms.ClearableFileInput(attrs={"class": "form-control"}),
         }
+
+    # Notas:
+    # - Este ModelForm mapea directamente los campos del modelo Producto.
+    # - Para validaciones personalizadas (por ejemplo validar dimensiones de
+    #   la imagen) extender el método clean_imagen o clean() del formulario.

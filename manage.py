@@ -1,5 +1,10 @@
 #!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
+"""Entrada de comandos para el proyecto Django.
+
+Este script se usa para ejecutar comandos como `runserver`, `migrate` y
+`test`. Se mantiene igual que el original generado por Django pero con
+este docstring en español para aclarar su propósito.
+"""
 import os
 import sys
 

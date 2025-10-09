@@ -1,10 +1,8 @@
-"""
-WSGI config for webdjango project.
+"""WSGI config para el proyecto webdjango.
 
-It exposes the WSGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
+Este archivo expone la aplicación WSGI mediante la variable `application`.
+Se utiliza en despliegues tradicionales con servidores WSGI (por ejemplo
+Gunicorn, uWSGI) en producción.
 """
 
 import os

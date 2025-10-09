@@ -34,3 +34,10 @@ class Producto(models.Model):
         # management now and remove the old 'market' dependency later.
         verbose_name = 'Producto'
         verbose_name_plural = 'Productos'
+    # Notas:
+    # - `imagen` almacena la ruta relativa dentro de MEDIA_ROOT (por ejemplo
+    #   'productos/ejemplo.png'). Los archivos reales deben guardarse en
+    #   el sistema de ficheros en MEDIA_ROOT.
+    # - Si cambias la propiedad `upload_to`, revisa las rutas en la DB y
+    #   los archivos existentes porque las rutas antiguas no se moverán
+    #   automáticamente.

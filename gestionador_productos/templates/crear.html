@@ -1,13 +1,17 @@
 <!--
 Plantilla para crear un nuevo Producto.
-Muestra el formulario generado por ProductoForm.
-Se requiere enctype multipart para subir imagenes.
+
+Notas:
+- `enctype="multipart/form-data"` es necesario para subir archivos (imagen).
+- `{% csrf_token %}` protege el formulario contra CSRF.
 -->
 
-{% extends 'base.html' %} {% block titulo %} Crear Producto {% endblock %} {%
-block contenido %}
+{% extends 'base.html' %} {# Título de la página #} {% block titulo %} Crear
+Producto {% endblock %} {% block contenido %}
 
 <h2>Crear Producto</h2>
+
+{# Formulario para crear un producto. enctype necesario para subir archivos. #}
 <form method="post" enctype="multipart/form-data" novalidate>
   {% csrf_token %} {{ form.as_p }}
   <button type="submit" class="btn btn-primary">Crear</button>

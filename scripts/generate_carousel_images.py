@@ -1,3 +1,15 @@
+"""Script auxiliar para generar variantes responsivas del carrusel.
+
+Este script toma tres imágenes fuente (en market/static/market/) y genera
+versiones PNG y WebP en tres tamaños (800, 1280, 1920). Utiliza Pillow para
+hacer fit/crop y guardar imágenes optimizadas.
+
+Ejemplo de uso (desde la raíz del repo):
+python scripts/generate_carousel_images.py
+
+Nota: este script es auxiliar y no se ejecuta en tiempo de ejecución de Django.
+"""
+
 from PIL import Image, ImageOps
 from pathlib import Path
 

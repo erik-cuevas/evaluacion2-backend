@@ -7,10 +7,12 @@ Contexto esperado: productos -> QuerySet de objetos Producto
 {% extends 'base.html' %}
 {% load static %}
 
+{# Título de la página: se inyecta en el <title> del base.html #}
 {% block titulo %}
 Listado
 {% endblock %}
 
+{# Bloque principal donde se renderiza la lista de productos #}
 {% block contenido %}
 
 <h2>Listado de Productos</h2>
@@ -85,4 +87,6 @@ Listado
 </table>
 {% else %}
 <p>No hay productos registrados.</p>
-{% endif %} {% endblock %}
+{% endif %}
+
+{% endblock %}

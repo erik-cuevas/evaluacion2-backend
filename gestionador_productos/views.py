@@ -38,12 +38,18 @@ def crear_producto(request):
     Si la petición es POST, valida el formulario y guarda el objeto (incluyendo la imagen).
     Si es GET, muestra el formulario vacío.
     """
+    # Nota: request.FILES contiene los archivos subidos (imagen). El form
+    # se encarga de validar el tipo y tamaño en el frontend; para validaciones
+    # más estrictas se puede ampliar el clean() del ModelForm.
     if request.method == "POST":
         form = ProductoForm(request.POST, request.FILES)
         if form.is_valid():
+            # save() guarda tanto los campos como el archivo en MEDIA_ROOT
             form.save()
+            # Redirigimos al listado tras creación (Post/Redirect/Get)
             return redirect("listado")
     else:
+        # GET -> mostrar formulario vacío
         form = ProductoForm()
     return render(request, "crear.html", {"form": form})
 
@@ -55,6 +61,8 @@ def eliminar_producto(request, pk):
     """
     producto = get_object_or_404(Producto, pk=pk)
     if request.method == "POST":
+        # Eliminar el objeto también elimina la referencia a la imagen en la DB;
+        # el archivo físico en MEDIA_ROOT no se borra automáticamente aquí.
         producto.delete()
         return redirect("listado")
     return render(request, "eliminar.html", {"producto": producto})

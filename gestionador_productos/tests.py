@@ -25,3 +25,8 @@ class ProductoListViewTest(TestCase):
         resp = self.client.get(url)
         self.assertEqual(resp.status_code, 200)
         self.assertContains(resp, "Listado de Productos")
+
+    # Nota: estos tests usan la base de datos de pruebas proporcionada por
+    # Django (se crea y destruye automáticamente). No tocan archivos en
+    # MEDIA_ROOT. Para pruebas de subida de archivos se recomienda usar
+    # django.core.files.uploadedfile.SimpleUploadedFile.

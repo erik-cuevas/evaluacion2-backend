@@ -2,7 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{% block titulo %}Market{% endblock %}</title>
+    <!-- Plantilla base: define la estructura común (head, navbar, footer) usada por otras plantillas -->
+    <title>
+      {% block titulo %}
+      Market
+      {% endblock %}
+    </title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -59,12 +64,17 @@
     </nav>
 
     <main class="container my-4">
+      <!-- Contenedor principal: cada plantilla hija rellenará el bloque "contenido" -->
       <div class="row">
-        <div class="col-12">{% block contenido %} {% endblock %}</div>
+        <div class="col-12">
+          {% block contenido %}
+          {% endblock %}
+        </div>
       </div>
     </main>
 
-    <footer class="bg-dark text-light mt-auto py-3">
+  <!-- Pie de página común a la aplicación -->
+  <footer class="bg-dark text-light mt-auto py-3">
       <div class="container text-center small">
         &copy; {% now "Y" %} MercadoPlus. Todos los derechos reservados. |
         <a href="mailto:erik.cuevas@mercadoplus.cl" class="text-light"
@@ -78,7 +88,7 @@
         <a href="#" class="text-light">Privacidad</a>
       </div>
     </footer>
-    <!-- Bootstrap JavaScript Libraries -->
+  <!-- Bootstrap JavaScript Libraries -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

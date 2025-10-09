@@ -11,4 +11,7 @@ class ProductoAdmin(admin.ModelAdmin):
     search_fields = ("nombre", "descripcion")
     list_filter = ("created_at",)
 
-# Fin de admin
+# Notas de admin:
+# - La configuración anterior muestra columnas útiles y permite búsqueda
+#   por nombre y descripción. Puedes personalizar list_display para añadir
+#   miniaturas o acciones inline si lo deseas.

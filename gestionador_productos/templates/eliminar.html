@@ -1,6 +1,10 @@
 <!--
 Plantilla de confirmación para eliminar un Producto.
-Recibe en contexto: producto (instancia de Producto).
+
+Contexto esperado:
+- producto: instancia de Producto que se desea eliminar.
+
+Al enviar (POST) se eliminará el registro y se redirigirá al listado.
 -->
 
 {% extends 'base.html' %} {% block titulo %} Eliminar Producto {% endblock %} {%

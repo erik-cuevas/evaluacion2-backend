@@ -1,8 +1,17 @@
 <!--
-Plantilla de inicio para la app. Muestra tarjetas y un carrusel.
+Plantilla de inicio para la app.
+
+Funciones principales:
+- Muestra dos tarjetas clicables (Ver Productos, Crear Producto).
+- Incluye un carrusel responsive que rota cada 5 segundos (data-bs-interval).
+
+Nota: las imágenes del carrusel se sirven desde los assets en
+`static/gestionador_productos/` y usan srcset para responsive.
 -->
-{% extends 'base.html' %} {% load static %} {% block titulo %} Inicio {%
-endblock %} {% block contenido %}
+
+{% extends 'base.html' %} {% load static %} {# Título de la página de inicio #}
+{% block titulo %} Inicio {% endblock %} {# Contenido principal de la página de
+inicio #} {% block contenido %}
 
 <div class="p-5 mb-4 bg-light rounded-3">
   <div class="container-fluid py-5">

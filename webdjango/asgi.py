@@ -1,10 +1,8 @@
-"""
-ASGI config for webdjango project.
+"""ASGI config para el proyecto webdjango.
 
-It exposes the ASGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/5.2/howto/deployment/asgi/
+Este archivo expone la aplicación ASGI mediante la variable `application`.
+Se utiliza en despliegues asíncronos o cuando se trabaja con servidores
+compatibles con ASGI. Para despliegue tradicional WSGI se usa `wsgi.py`.
 """
 
 import os
